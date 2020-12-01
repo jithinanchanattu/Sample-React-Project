@@ -208,9 +208,8 @@ function HomeHeaderComponent() {
                 <LoginDropdownComponent
                     label={
                         <>
-                            <span className={classes.name}>Germán Llorente</span>
-                            <img
-                                src='https://avatars3.githubusercontent.com/u/21162888?s=460&v=4'
+                            <span className={classes.name}>Login</span>
+                            <img src={require('assets/avatar/user.png')}
                                 alt='avatar'
                                 className={classes.avatar}
                             />

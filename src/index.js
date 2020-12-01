@@ -5,6 +5,7 @@ import { ThemeProvider } from 'react-jss';
 import Theme from 'resources/theme';
 import Routes from 'routes';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

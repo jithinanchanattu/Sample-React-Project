@@ -41,6 +41,7 @@ const useStyles = createUseStyles((theme) => ({
         minWidth: 170,
         padding: 0,
         position: 'absolute',
+        zIndex: 9999,
         // width: '100%',
         top: ({ position }) => position.top,
         right: ({ position }) => position.right,
@@ -101,7 +102,7 @@ function LoginDropdownComponent({ label, options, position }) {
             {userMenuOpen && (
                 <Column className={classes.dropdownItemsContainer}>
                     <input type="text" placeholder="Username" className={classes.inputText}/>
-                    <input type="text" placeholder="Password" className={classes.inputText}/>
+                    <input type="password" placeholder="Password" className={classes.inputText}/>
                     <span className={classes.forgotPasswordLink}>Forgot Password</span>
                     <button className={classes.dropdownItem} onClick={() => onLogin()} >Login</button>
                     {/* {options.map((option, index) => (

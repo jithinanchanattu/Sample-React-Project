@@ -5,8 +5,21 @@ import MiniCardComponent from 'components/cards/MiniCardComponent';
 import TodayTrendsComponent from './TodayTrendsComponent';
 import UnresolvedTicketsComponent from './UnresolvedTicketsComponent';
 import TasksComponent from './TasksComponent';
+import { Button } from 'react-bootstrap';
 
 const useStyles = createUseStyles({
+    alignCenter:{
+        margin: 'auto',
+    },
+    introBlockHome: {
+        // margin: 'auto'
+        margin: 'auto',
+        width: '50%',
+        padding: '10px',
+    },
+    imgHomeSlider:{
+        width:'100%'
+    },
     cardsContainer: {
         marginRight: -30,
         marginTop: -30
@@ -45,10 +58,54 @@ const useStyles = createUseStyles({
     }
 });
 
+const ColoredLine = ({ color }) => (
+    <hr
+        style={{
+            color: color,
+            backgroundColor: color,
+            width: '100%'
+        }}
+    />
+);
+
 function HomeComponent() {
     const classes = useStyles();
     return (
         <Column>
+         <ColoredLine color="grey" />   
+            <div class="row">
+                <div class="col-md-6" className={classes.introBlockHome}>
+                    <h1>Welcome to Aria!</h1><br/>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                    <Button type="button" class="btn btn-primary" >Join Us</Button>
+                </div>
+                <div class="col-md-6"><img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Trulli" className={classes.imgHomeSlider} /></div>
+            </div>
+            <br/>            
+            <ColoredLine color="grey" /> 
+            <h3 className={classes.alignCenter}>How it Works!</h3>  
+            <br/>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src={require('assets/images/imgholder.jpg')}
+                        alt='placeholder'
+                    /><br/>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src={require('assets/images/imgholder.jpg')}
+                        alt='placeholder'
+                    /><br/>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src={require('assets/images/imgholder.jpg')}
+                        alt='placeholder'
+                    /><br/>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+            </div>
+            <br/>
             <Row
                 className={classes.cardsContainer}
                 wrap
