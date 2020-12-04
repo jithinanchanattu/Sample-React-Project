@@ -17,5 +17,6 @@ export default {
     login: '/login',
     signup: '/signup',
     forgotPassword: '/forgot_password',
-    home: '/home'
+    home: '/home',
+    homePage:'/home_page'
 };
