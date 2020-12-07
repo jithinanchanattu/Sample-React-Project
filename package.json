@@ -4,8 +4,10 @@
     "private": true,
     "homepage": "https://llorentegerman.github.io/react-admin-dashboard",
     "dependencies": {
+        "axios": "^0.21.0",
         "bootstrap": "^4.5.3",
         "firebase": "^8.1.1",
+        "mdbreact": "^5.0.0",
         "prop-types": "^15.7.2",
         "react": "^16.13.1",
         "react-avatar": "^3.9.7",

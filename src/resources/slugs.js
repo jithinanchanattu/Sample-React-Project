@@ -1,10 +1,11 @@
 export default {
     // private
     dashboard: '/dashboard',
-    overview: '/overview',
+    overview: '/orders',
     overviewTwo: '/overview/two',
     overviewThree: '/overview/three',
     tickets: '/tickets',
+    products: '/products',
     ideas: '/ideas',
     ideasTwo: '/ideas/two',
     ideasThree: '/ideas/three',

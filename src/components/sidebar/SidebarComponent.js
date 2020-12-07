@@ -56,12 +56,12 @@ function SidebarComponent() {
             <MenuItem
                 id={SLUGS.overview}
                 items={[SLUGS.overviewTwo, SLUGS.overviewThree]}
-                title='Overview'
+                title='Orders'
                 icon={IconOverview}
             >
                 <MenuItem
                     id={SLUGS.overview}
-                    title='Sub Item 1'
+                    title='My Orders'
                     level={2}
                     icon={IconAgents}
                     onClick={() => onClick(SLUGS.overview)}
