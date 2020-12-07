@@ -1,11 +1,11 @@
 import React from 'react';
-import { Column, Row } from 'simple-flexbox';
+import { Row } from 'simple-flexbox';
 import { Button } from 'react-bootstrap';
 import { createUseStyles } from 'react-jss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './commonStyle.css';
 import RoundIconComponent from 'components/cards/RoundIconComponent';
-import styled from 'styled-components';
+import InputComponent from './InputFields'
+
 
 
 const ColoredLine = ({ color }) => (
@@ -59,7 +59,8 @@ const useStyles = createUseStyles({
     },
     cardsContainer: {
         marginRight: -30,
-        marginTop: -30
+        marginTop: -30,
+        marginBottom: 100
     },
     cardRow: {
         marginTop: 30,
@@ -67,26 +68,7 @@ const useStyles = createUseStyles({
             marginTop: 0
         }
     },
-    minCardContainer: {
-        flexGrow: 2,
-        marginRight: 30,
-        '@media (max-width: 768px)': {
-            marginTop: 30,
-            maxWidth: 'none'
-        }
-    },
-    input: {
-
-        width: "100%",
-        padding: 20,
-        boxSizing: "borderBox",
-        marginBottom: 25,
-        border: "2px solid #e9eaea",
-        fontSize: 14,
-        borderRadius: 5,
-        outline: "none",
-        transition: "all 0.5s ease",
-    },
+   
     rightButton: {
         float: "right"
     },
@@ -94,13 +76,31 @@ const useStyles = createUseStyles({
         width: "50%",
         margin: 30,
         marginLeft: -5
-    }
+    },
+    h3Label: {
+        marginLeft: 30,
+        marginBottom:50
+    },
+    h2Span: { 
+        background:"#F7F8FC",
+        padding: 10, 
+        color: "#585b71ff",
+        fontWeight: 800
+    },
+    h2:  {
+        width: "100%",
+        textAlign: "center",
+        borderBottom: "1px solid #585b71ff",
+        lineHeight: "0.1em",
+        marginLeft: 10,
+        marginRight:20
+     } 
 
 })
 function HomePage() {
     const classes = useStyles();
     return (
-        <Column>
+        <>
             <ColoredLine color="grey" />
             <div class="row">
                 <div class="col-md-6" className={classes.welcomeBlock}>
@@ -112,7 +112,7 @@ function HomePage() {
             </div>
             <br />
             <div className={classes.lineContainer}>
-                <h2 ><span>How it Works</span></h2>
+                <h2 className={classes.h2}><span className={classes.h2Span}>How it Works</span></h2>
             </div>
             <br />
             <div className={classes.paddingTopBottom}>
@@ -139,7 +139,7 @@ function HomePage() {
             </div>
             <br />
             <div className={classes.lineContainer}>
-                <h2 ><span>Our Services</span></h2>
+            <h2 className={classes.h2}><span className={classes.h2Span}>Our Services</span></h2>
             </div>
             <br />
             <Row
@@ -183,33 +183,26 @@ function HomePage() {
                 </Row>
             </Row>
             <br />
-            
-            <h3 className="h3-label">Contact Us</h3>
-            <div className="container" style={{ display: "flex" }} >
-            
-                <div className="col-6">
-                    <div className="row">
-                        <div className="col-6">
-                            <input type="text" className={classes.input} placeholder="First Name" />
-                        </div>
-                        <div className="col-6">
-                            <input type="text" className={classes.input} placeholder="Last Name" />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-12">
-                            <input type="text" className={classes.input} placeholder="Email Address" />
-                        </div>
-                    </div>
-                </div>
-                <div className="col-6" >
-                    <textarea style={{height:160}} className={classes.input} placeholder="Message"></textarea>
-                </div>
-            </div>
+            <div className="container">
+                <h3 className={classes.h3Label}>Contact Us</h3>
+                <div className="container" style={{ display: "flex" }} >
 
+                    <div className="col-6">
+                        <div className="row">
+                            <InputComponent className='col-6' type="text" placeholder="First Name"/>
+                            <InputComponent className='col-6' type="text" placeholder="Last Name"/>
+                        </div>
+                        <div className="row">
+                            <InputComponent className='col-12' type="text" placeholder="Email Address"/>
+                        </div>
+                    </div>
+                    <InputComponent className='col-6' type="" placeholder="Message"/>
+                </div>
+                <Button className={classes.rightButton} variant="secondary" size="lg">Join Us</Button>
+            </div>
             <br />
 
-        </Column>
+        </>
 
     );
 
