@@ -18,6 +18,7 @@ render() {
                <h6 class="font-weight-bold mb-3">Price</h6>
         <div class="input-group">
             <input
+            autoComplete='off'
         type="text"
         name="min"
         style={{width:'70px',marginRight:'10px'}}
@@ -26,7 +27,7 @@ render() {
       />
             <span class="input-group-addon">to</span>
 
-          <input
+          <input  autoComplete='off'
         type="text"
         name="max"
         style={{width:'70px',marginLeft:'10px'}}
