@@ -83,7 +83,7 @@ function SidebarComponent() {
             </MenuItem>
             <MenuItem
                 id={SLUGS.tickets}
-                title='Tickets'
+                title='Product List'
                 icon={IconTickets}
                 onClick={() => onClick(SLUGS.tickets)}
             />
