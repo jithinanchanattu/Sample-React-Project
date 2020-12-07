@@ -319,7 +319,7 @@ import IconOverview from '../../assets/icon-overview.js';
 <Column className={css(styles.container)}>
     <LogoComponent />
     <Column className={css(styles.menuItemList)}>
-        <MenuItemComponent title="Overview" icon={IconOverview} />
+        <MenuItemComponent title="Orders" icon={IconOverview} />
         <MenuItemComponent title="Tickets" icon={IconTickets} active />
         <MenuItemComponent title="Ideas" icon={IconIdeas} />
         <MenuItemComponent title="Contacts" icon={IconContacts} />

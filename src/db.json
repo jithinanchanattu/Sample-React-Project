@@ -1,0 +1,41 @@
+{
+    "orderList": [
+        {
+            "id": 1,
+            "item": "Coffee",
+            "price": "$20",
+            "number": "100"
+        },
+        {
+            "id": 2,
+            "item": "Tea",
+            "price": "$30",
+            "number": "200"
+        },
+        {
+            "id": 1,
+            "item": "Milk",
+            "price": "$50",
+            "number": "500"
+        },
+        {
+            "id": 1,
+            "item": "Glass",
+            "price": "$10",
+            "number": "1000"
+        },
+        {
+            "id": 1,
+            "item": "Spoon",
+            "price": "$10",
+            "number": "100"
+        },
+        {
+            "id": 1,
+            "item": "Tissue",
+            "price": "$5",
+            "number": "1000"
+        }
+
+    ]
+}
