@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {httpGet} from '../api/apiHelper.js'
-//  import '../../css/style.css';
-// import '../node_modules/bootstrap/css/bootstrap.min.css'
+  import 'css/style.css';
+   import 'bootstrap/dist/css/bootstrap.min.css'
 import CardBlock from '../cards/cardUI.js'
 import CategoryFilter from './filters/categoryFilter'
 import PriceFilter from './filters/priceFilter';
@@ -78,9 +78,9 @@ getDataSource(){
       else if (this.state.loading === 'false') {
         return (
             <>
-                <h2 style={{textAlign:"center"}}>Products</h2>
+                {/* <h2 >Products</h2>
                 <br/>
-                <br/>
+                <br/> */}
             
                 <div>
                     {
