@@ -16,7 +16,8 @@ export default class ProductList extends Component {
       categories : [],
       filteredData : null,
       filteredCategories : [],
-      minVal : 0,maxVal: 0
+      minVal : 0,maxVal: 0,
+      searchTerm : ''
     };
 }
 
@@ -24,6 +25,31 @@ getDataSource(){
   return ((this.state.filteredData != null && this.state.filteredData.length > 0) ? 
   this.state.filteredData : this.state.datas);
 }
+sortData = (e)=>{
+  debugger;
+  if(e.target.value === 'category'){
+    this.setState({
+      filteredData: 
+      this.state.datas.sort((a,b) => (a.category > b.category) ? 1 :
+       ((b.category > a.category) ? -1 : 0))
+    })
+  }
+  else   if(e.target.value === 'price'){
+    this.setState({
+      filteredData: 
+      this.state.datas.sort((a,b) => (a.price > b.price) ? 1 :
+       ((b.price > a.price) ? -1 : 0))
+    })
+  }
+  else
+  {
+    this.setState({
+      filteredData: this.state.datas
+    })
+  }
+}
+
+
 
     getProduct(product, index) {
         return (
@@ -31,16 +57,25 @@ getDataSource(){
         )
     }
 
+    editSearchTerm = (e)=>{
+      this.setState({
+        editSearchTerm: e.target.value,
+        filteredData : e.target.value.length > 0 ?
+         this.state.datas.filter(x=>x.title.toLowerCase().includes(e.target.value.toLowerCase())):
+         this.state.datas
+      })
+    }
+
     onMinValChange(val){
       this.setState({filteredData:
-        this.getDataSource().filter(x=>parseInt(x.price) >= val &&
+        this.state.datas.filter(x=>parseInt(x.price) >= val &&
         (parseInt(this.state.maxVal) > 0 ?  parseInt(x.price) <= parseInt(this.state.maxVal) : true)),
       minVal : !isNaN(val) ? val : 0});
     }
 
     onMaxValChange(val){
       this.setState({filteredData:
-        this.getDataSource().filter(x=>parseInt(x.price) <= val && 
+        this.state.datas.filter(x=>parseInt(x.price) <= val && 
         ((parseInt(this.state.minVal) > 0 && this.state.minVal < val)? 
          parseInt(x.price) >= parseInt(this.state.minVal) : true)),
       maxVal : !isNaN(val) ? val : 0});
@@ -78,9 +113,7 @@ getDataSource(){
       else if (this.state.loading === 'false') {
         return (
             <>
-                {/* <h2 >Products</h2>
-                <br/>
-                <br/> */}
+
             
                 <div>
                     {
@@ -108,6 +141,21 @@ getDataSource(){
   onMaxValChange = {(val)=> this.onMaxValChange(parseInt(val))}/>
   </div>
   <div id="page-wrap">
+
+  <div class="form-row">
+  Result count - {this.getDataSource().length}
+     <label style={{marginLeft:'70px',marginRight:'15px'}}  for="name">Search </label>
+     <input type="text" class="form-control"  style={{width:'150px',marginBottom:'25px'}}
+     onChange = {this.editSearchTerm} />
+     <label style={{marginLeft:'40px',marginRight:'15px'}}  for="name">Sort </label>
+     <select class="browser-default custom-select" style={{width:'150px'}}
+     onChange= {this.sortData}>
+  <option selected>-- Select -- </option>
+  <option value="category">Category</option>
+  <option value="price">Price</option>
+</select>
+  </div>
+
   <div class="row">
   {
 this.getDataSource().map((product, index) => {
