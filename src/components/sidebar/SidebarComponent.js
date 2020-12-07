@@ -56,12 +56,12 @@ function SidebarComponent() {
             <MenuItem
                 id={SLUGS.overview}
                 items={[SLUGS.overviewTwo, SLUGS.overviewThree]}
-                title='Overview'
+                title='Orders'
                 icon={IconOverview}
             >
                 <MenuItem
                     id={SLUGS.overview}
-                    title='Sub Item 1'
+                    title='My Orders'
                     level={2}
                     icon={IconAgents}
                     onClick={() => onClick(SLUGS.overview)}
@@ -82,10 +82,10 @@ function SidebarComponent() {
                 />
             </MenuItem>
             <MenuItem
-                id={SLUGS.products}
-                title='Product List'
+                id={SLUGS.tickets}
+                title='Tickets'
                 icon={IconTickets}
-                onClick={() => onClick(SLUGS.products)}
+                onClick={() => onClick(SLUGS.tickets)}
             />
             <MenuItem
                 id={SLUGS.ideas}

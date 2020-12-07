@@ -130,6 +130,9 @@ function HomeHeaderComponent() {
         case currentItem === SLUGS.products:
             title = 'Products';
             break;
+        case currentItem === SLUGS.tickets:
+            title = 'Tickets';
+            break;
         case [SLUGS.ideas, SLUGS.ideasTwo, SLUGS.ideasThree].includes(currentItem):
             title = 'Ideas';
             break;
